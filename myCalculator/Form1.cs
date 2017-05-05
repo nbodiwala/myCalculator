@@ -25,6 +25,87 @@ namespace myCalculator
             InitializeComponent();
         }
 
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '0')
+            {
+                e.Handled = true;
+                btn0.PerformClick();
+            }
+            if (e.KeyChar == '1')
+            {
+                e.Handled = true;
+                btn1.PerformClick();
+            }
+            if (e.KeyChar == '2')
+            {
+                e.Handled = true;
+                btn2.PerformClick();
+            }
+            if (e.KeyChar == '3')
+            {
+                e.Handled = true;
+                btn3.PerformClick();
+            }
+            if (e.KeyChar == '4')
+            {
+                e.Handled = true;
+                btn4.PerformClick();
+            }
+            if (e.KeyChar == '5')
+            {
+                e.Handled = true;
+                btn5.PerformClick();
+            }
+            if (e.KeyChar == '6')
+            {
+                e.Handled = true;
+                btn6.PerformClick();
+            }
+            if (e.KeyChar == '7')
+            {
+                e.Handled = true;
+                btn7.PerformClick();
+            }
+            if (e.KeyChar == '8')
+            {
+                e.Handled = true;
+                btn8.PerformClick();
+            }
+            if (e.KeyChar == '9')
+            {
+                e.Handled = true;
+                btn9.PerformClick();
+            }
+            if (e.KeyChar == '+')
+            {
+                e.Handled = true;
+                btnAdd.PerformClick();
+            }
+            if (e.KeyChar == '-')
+            {
+                e.Handled = true;
+                btnSubtract.PerformClick();
+            }
+            if (e.KeyChar == '*')
+            {
+                e.Handled = true;
+                btnMultiply.PerformClick();
+            }
+            if (e.KeyChar == '/')
+            {
+                e.Handled = true;
+                btnDivide.PerformClick();
+            }
+            if (e.KeyChar == 127)
+            {
+                e.Handled = true;
+                MessageBox.Show("Enter Pressed");
+                btnClear.PerformClick();
+            }
+
+        }
+
         private void btn0_Click(object sender, EventArgs e)
         {
             input += "0";
@@ -172,6 +253,24 @@ namespace myCalculator
             input = string.Empty;
             operand1 = string.Empty;
             operand2 = string.Empty;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                e.Handled = true;
+                btnClear.PerformClick();
+            }
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                btnEqual.PerformClick();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

@@ -18,8 +18,6 @@ namespace myCalculator
         char operation;
         double result = 0.0;
         
-
-
         public Form1()
         {
             InitializeComponent();
